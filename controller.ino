@@ -33,17 +33,20 @@ int keyboardCommands[22][3] = {
 };
 
 void setup() {
+
   Serial.begin(9600);
   while (!Serial) ;
-  pinStatus[0] = 0;
+
+
   for (int i = 0; i < panelPins; i++){
     pinMode(i, INPUT_PULLUP);
     digitalWrite(i, 1);
     pinStatus[i] = 1;
   }
 
-  Keyboard.begin(); //Turns the keyboard input on.
-  delay(200); //Wait before continuing on with the code.
+  // KEYBOARD LIB INIT AND WAIT
+  Keyboard.begin(); 
+  delay(200); 
 
   Serial.println("Setup end");
 }
@@ -60,15 +63,16 @@ void loop() {
         }
       }
       
-      
+      // FLAPS CONTROLL
       if(y == 10 && digitalRead(y) == 0){
         Keyboard.press(198);
       }else if(y == 10 && digitalRead(y) == 1){
         Keyboard.press(198);
         Keyboard.press(200);
       }
-      if(y == 9){
 
+      // GEARS CONTROLL
+      if(y == 9){
         Keyboard.press(128);
         Keyboard.press(129);
         Keyboard.press(130);
@@ -76,8 +80,9 @@ void loop() {
       }
       delay(200);
       Keyboard.releaseAll();
-
-      Serial.print(y);Serial.print(" ");Serial.println(newStatus);
+      
+      // UNCOMMENT FOR DEBUG
+      // Serial.print(y);Serial.print(" ");Serial.println(newStatus);
       delay(50);
     }
   }
