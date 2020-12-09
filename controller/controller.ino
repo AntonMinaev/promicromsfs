@@ -33,9 +33,9 @@ int keyboardCommands[22][3] = {
 };
 
 void setup() {
-
-  Serial.begin(9600);
-  while (!Serial) ;
+//
+//  Serial.begin(9600);
+//  while (!Serial) ;
 
 
   for (int i = 0; i < panelPins; i++){
