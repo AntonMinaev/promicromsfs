@@ -76,24 +76,12 @@ void loop() {
         Keyboard.press(130);
         Keyboard.press('E');
       }
-
-//      
-//      if(y == 3 && digitalRead(y) == 0){// CTRL+ALT+A AVIONICS ####### U MUST SET IT MANUALY IN GAME SETTINGS
-//        Keyboard.press(128); 
-//        Keyboard.press(129);
-//        Keyboard.press(130);
-//        Keyboard.press('A');
-//      }else if(y == 3 && digitalRead(y) == 1){// CTRL+ALT+A AVIONICS ####### U MUST SET IT MANUALY IN GAME SETTINGS
-//        Keyboard.press(128);
-//        Keyboard.press(130);
-//        Keyboard.press('A');
-//      }
       
       delay(200);
       Keyboard.releaseAll();
       
        // UNCOMMENT FOR DEBUG
-       Serial.print(y);Serial.print(" ");Serial.println(newStatus);
+      //  Serial.print(y);Serial.print(" ");Serial.println(newStatus);
       delay(50);
     }
   }
